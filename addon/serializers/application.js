@@ -5,6 +5,10 @@ export default DS.RESTSerializer.extend({
 
   primaryKey: 'objectId',
 
+  modelNameFromPayloadKey: function() {
+    return 'invitation-code';
+  },
+
   extractArray: function( store, primaryType, payload ) {
     var namespacedPayload = {};
     namespacedPayload[ Ember.String.pluralize( primaryType.typeKey ) ] = payload.results;
